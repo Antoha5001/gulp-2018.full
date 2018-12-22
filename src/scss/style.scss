@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@import "../../node_modules/reset-css/sass/reset";
+@import "variables";
+@import "font";
+
+@import "mixin";
+@import "core";
+
+h1{
+  font-size: 48px;
+  color: $black;
+}
+.row{
+  display: grid;
+}
+
+a{
+  text-decoration: none;
+  /*color: inherit;*/
+}
