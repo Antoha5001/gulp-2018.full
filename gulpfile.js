@@ -77,10 +77,11 @@ function srcImg() {
         .pipe(gulp.dest('./build/img'))
         .pipe(browserSync.stream());
 }
+
 function images() {
     return gulp.src('./build/img/**/*.{png,jpg}')
         .pipe(imagemin([
-            imagemin.jpegtran({progressive:true}),
+            imagemin.jpegtran({progressive: true}),
             imageminJpegRecompress({
                 loops: 5,
                 min: 65,
@@ -88,7 +89,7 @@ function images() {
                 quality: 'medium'
             }),
             imagemin.optipng({optimizationLevel:3}),
-            pngquant({quality: '65-70', speed: 5})
+            pngquant({quality: [0.65,0.70], speed: 5})
         ]))
         .pipe(gulp.dest('./build/img'));
 }
